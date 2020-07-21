@@ -1,9 +1,5 @@
 <h2 align="center">APP College</h2>
 
-___
-
-
-
 
 <p align="center">
   <a href="LICENSE">
@@ -16,7 +12,6 @@ ___
 <h3 align="center">
   <a href="#information_source-sobre">Sobre</a>&nbsp;|&nbsp;
   <a href="#interrobang-motivo">Motivo</a>&nbsp;|&nbsp;
-  <a href="#seedling-requisitos-mínimos">Requisitos</a>&nbsp;|&nbsp;
   <a href="#rocket-tecnologias-utilizadas">Tecnologias</a>&nbsp;|&nbsp;
   <a href="#licença">Licença</a>
 </h3>
@@ -32,10 +27,6 @@ O projeto é um gerenciador de professores e alunos para qualquer tipo de instit
 ## :interrobang: Motivo
 
 Esse projeto está sendo desenvolvido como um desafio proposto na fase 03 do bootcamp LaunchBase da Rocketseat, com base no aprendizado do curso. 
-
-## :seedling: Requisitos Mínimos
-
-NodeJS, Express, Nunjucks
 
 ## :rocket: Tecnologias Utilizadas 
 
