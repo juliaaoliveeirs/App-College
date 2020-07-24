@@ -1,7 +1,12 @@
 const fs = require('fs')
 const data = require('./data.json')
 
-//create
+// show
+exports.show = function(req, res) {
+
+}
+
+// create
 exports.post = function(req, res) {
 
     const keys = Object.keys(req.body)

@@ -18,6 +18,8 @@ routes.get('/students', function(req, res) {
     return res.render('students/index')
 })
 
+routes.get("/teachers/:id", teachers.show)
+
 routes.post("/teachers", teachers.post)
 
 routes.use(function(req, res) {
