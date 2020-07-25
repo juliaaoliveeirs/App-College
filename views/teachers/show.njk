@@ -3,50 +3,48 @@
 
 {% block content %}
     <div class="card">
-        <section class="image" style="background:url(https://source.unsplash.com/collection/5041380/500x500) no-repeat center center / cover"></section>
+        <section class="image" style="background:url({{teacher.avatar_url}}) no-repeat center center / cover"></section>
         <section class="details">
 
             <h2>Detalhes</h2>
 
             <div class="items">
-                <div class="item">
-                    <p>Avatar</p>
-                    <p>Avatar_url</p>
-                </div>
 
                 <div class="item">
                     <p>Nome Completo</p>
-                    <p>Jane Doe</p>
+                    <p>{{teacher.name}}</p>
                 </div>
 
                 <div class="item">
                     <p>Idade</p>
-                    <p>23</p>
+                    <p>{{teacher.age}}</p>
                 </div>
 
                 <div class="item">
                     <p>Grau de escolaridade</p>
-                    <p>Tecnóloga</p>
+                    <p>{{ teacher.education_level }}</p>
                 </div>
 
                 <div class="item">
                     <p>Tipo de aula</p>
-                    <p>À distância</p>
+                    <p>{{ "Presencial" if teacher.type_of_class == "Presential" else "À Distância" }}</p>
                 </div>
 
                 <div class="item">
                     <p>Acompanhamento</p>
                     <p>
-                        <span>Matemática</span>
-                        <span>Física</span>
+                        {% for occupation in teacher.occupation_area %}
+                            <span>{{occupation}}</span>
+                        {% endfor %}
                     </p>
                 </div>
 
                 <div class="item">
                     <p>Desde</p>
-                    <p>01/01/2020</p>
+                    <p>{{teacher.created_at}}</p>
                 </div>
             </div>
+            <button onclick="location.href='{{ teacher.id }}/edit'" type="button" >Editar</button>
         </section>
     </div>
 {% endblock %}

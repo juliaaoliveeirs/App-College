@@ -22,6 +22,10 @@ routes.get("/teachers/:id", teachers.show)
 
 routes.post("/teachers", teachers.post)
 
+routes.get('/teachers/:id/edit', function(req, res) {
+    return res.send('Funcionou')
+})
+
 routes.use(function(req, res) {
     res.status(404).render("not-found");
 });

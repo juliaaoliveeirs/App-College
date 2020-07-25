@@ -1,13 +1,23 @@
 {
-  "teachers": [
-    {
-      "id": 1,
-      "name": "Julia Silva",
-      "birth": 864604800000,
-      "education_level": "Doctorate degree",
-      "type_of_class": "Presential",
-      "occupation_area": "Matemática avançada",
-      "created_at": 1595335466515
-    }
-  ]
+    "teachers": [{
+            "id": 1,
+            "avatar_url": "https://source.unsplash.com/collection/5041380/500x500",
+            "name": "Julia Silva",
+            "birth": 864604800000,
+            "education_level": "Master's degree",
+            "type_of_class": "Distance",
+            "occupation_area": "Matemática, Lógica Programação",
+            "created_at": 1595703102428
+        },
+        {
+            "id": 2,
+            "avatar_url": "https://source.unsplash.com/collection/3465564/500x500",
+            "name": "Lucas Silva",
+            "birth": 843436800000,
+            "education_level": "Complete Higher Education",
+            "type_of_class": "Presential",
+            "occupation_area": "Português",
+            "created_at": 1595705539821
+        }
+    ]
 }
