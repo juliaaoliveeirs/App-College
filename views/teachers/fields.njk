@@ -1,0 +1,62 @@
+<div class="items">
+    <div class="item">
+        <p>Avatar</p>
+        <input type="url" name="avatar_url" placeholder="http://" value="{{teacher.avatar_url}}">
+    </div>
+
+    <div class="item">
+        <p>Nome Completo</p>
+        <input type="text" name="name" placeholder="Nome Completo" value="{{teacher.name}}">
+    </div>
+
+    <div class="item">
+        <p>Data de Nascimento</p>
+        <input type="date" name="birth" value="{{teacher.birth}}">
+    </div>
+
+    <div class="item">
+        <p>Grau de escolaridade</p>
+        <select name="education_level">
+            <option value="Complete High School"
+            {% if teacher.education_level =='Complete High School'%} selected {% endif %}>
+                Ensino Médio Completo
+            </option>
+            <option value="Complete Higher Education"
+            {% if teacher.education_level =='Complete Higher Education'%} selected {% endif %}>
+                Ensino Superior Completo
+            </option>
+            <option value="Masters degree"
+            {% if teacher.education_level =='Masters degree'%} selected {% endif %}>
+                Mestrado
+            </option>
+            <option value="Doctorate degree"
+            {% if teacher.education_level =='Doctorate degree'%} selected {% endif %}>
+                Doutorado
+            </option>
+        </select>
+    </div>
+
+    <div class="item">
+        <p>Tipo de aula</p>
+        <span>
+            <input type="radio" name="type_of_class" value="Presential" 
+            {% if teacher.type_of_class =='Presential'%} checked {% endif %}
+            >
+            Presencial
+        </span>
+        <span>
+            <input type="radio" name="type_of_class" value="Distance"
+            {% if teacher.type_of_class =='Distance'%} checked {% endif %}>
+            À Distância
+        </span>
+    </div>
+
+    <div class="item">
+        <p>Área de atuação</p>
+        <p>
+            <input type="text" name="occupation_area" value="{{teacher.occupation_area}}" placeholder="Preencha utilizando sepação por vírgula">
+        </p>
+    </div>
+
+    <button type="submit">Salvar</button>
+</div>

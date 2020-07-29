@@ -26,7 +26,7 @@ module.exports = {
             case "Complete Higher Education":
                 graduation = "Ensino Superior Completo"
                 break
-            case "Master's degree":
+            case "Masters degree":
                 graduation = "Mestrado"
                 break
             case "Doctorate degree":
@@ -36,5 +36,15 @@ module.exports = {
 
         return graduation
 
+    },
+
+    date: function(timestamp) {
+        const date = new Date(timestamp)
+
+        const year = date.getUTCFullYear()
+        const month = `0${date.getUTCMonth() + 1}`.slice(-2)
+        const day = `0${date.getUTCDate()}`.slice(-2)
+
+        return `${year}-${month}-${day}`
     }
 }
