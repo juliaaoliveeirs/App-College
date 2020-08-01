@@ -7,47 +7,10 @@
         <section class="details">
 
             <h2>Adicionando Professor</h2>
-            <div class="items">
-                <div class="item">
-                    <p>Avatar</p>
-                    <input type="url" name="avatar_url" placeholder="http://">
-                </div>
+            
+            {% include 'teachers/fields.njk'%}
 
-                <div class="item">
-                    <p>Nome Completo</p>
-                    <input type="text" name="name" placeholder="Nome Completo">
-                </div>
-
-                <div class="item">
-                    <p>Idade</p>
-                    <input type="date" name="birth">
-                </div>
-
-                <div class="item">
-                    <p>Grau de escolaridade</p>
-                    <select name="education_level">
-                        <option value="Complete High School">Ensino Médio Completo</option>
-                        <option value="Complete Higher Education">Ensino Superior Completo</option>
-                        <option value="Master's degree">Mestrado</option>
-                        <option value="Doctorate degree">Doutorado</option>
-                    </select>
-                </div>
-
-                <div class="item">
-                    <p>Tipo de aula</p>
-                    <span><input type="radio" name="type_of_class" value="Presential">Presencial</span>
-                    <span><input type="radio" name="type_of_class" value="Distance">À Distância</span>
-                </div>
-
-                <div class="item">
-                    <p>Área de atuação</p>
-                    <p>
-                        <input type="text" name="occupation_area" placeholder="Preencha utilizando sepação por vírgula">
-                    </p>
-                </div>
-
-                <button type="submit">Salvar</button>
-            </div>
+            <button type="submit">Salvar</button>
         </section>
     </form>
 {% endblock %}

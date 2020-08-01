@@ -189,12 +189,26 @@ input::placeholder {
 button[type="button"],
 button[type="submit"] {
     border-radius: 5px;
-    width: 100%;
+    width: 99%;
     padding: 12px 32px;
-    background-color: var(--secondary-color);
+    background-color: forestgreen;
     color: var(--primary-color);
     font-size: 16px;
     margin-top: 24px;
+}
+
+button[type="button"]{
+    width: 100%;
+    background-color: var(--secondary-color)
+}
+
+.form-delete button[type="submit"]{
+    background-color: firebrick;
+}
+
+.divButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 button[type="button"]:hover,
