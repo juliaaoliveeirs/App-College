@@ -3,6 +3,33 @@ const data = require('./data.json')
 const Intl = require('intl')
 const { age, graduation, date } = require('./utils')
 
+// index
+exports.index = function(req, res) {
+
+    // criar um array vazio
+    let teach = []
+
+    // faz um for para percorrer cada um dos professores
+    // utilizando o i = 1 para ser igual ao numero do ID
+    for(let i = 1; i < data.teachers.length + 1; i++){
+        const foundTeacher = data.teachers.find(function(teacher){
+            // se retornar TRUE então a informação fica na const
+            return teacher.id == i
+        })
+        
+        if(!foundTeacher) return res.send("Teacher not found")
+
+        // preenhe o array lá de fora com as informações do 
+        // teacher encontrado e do occupation separado conforme precisamos
+        teach.push({
+            ...foundTeacher,
+            occupation_area: foundTeacher.occupation_area.split(",")
+        })
+    }
+
+    return res.render('teachers/index', { teachers: teach })
+}
+
 // show
 exports.show = function (req, res) {
 
@@ -98,7 +125,8 @@ exports.update = function (req, res) {
     const teacher = {
         ...foundTeacher,
         ...req.body,
-        birth: Date.parse(req.body.birth)
+        birth: Date.parse(req.body.birth),
+        id: Number(req.body.id)
     }
 
     data.teachers[index] = teacher
