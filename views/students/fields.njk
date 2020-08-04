@@ -1,0 +1,55 @@
+<div class="items">
+    <div class="item">
+        <p>Avatar</p>
+        <input type="url" name="avatar_url" placeholder="http://" value="{{student.avatar_url}}">
+    </div>
+
+    <div class="item">
+        <p>Nome Completo</p>
+        <input type="text" name="name" placeholder="Nome Completo" value="{{student.name}}">
+    </div>
+
+    <div class="item">
+        <p>Email</p>
+        <input type="email" placeholder="teste@teste.com.br" name="email" value="{{student.email}}">
+    </div>
+
+    <div class="item">
+        <p>Data de Nascimento</p>
+        <input type="date" name="birth" value="{{student.birth}}">
+    </div>
+
+    <div class="item">
+        <p>Ano Escolar</p>
+        <select name="grade">
+            <option value="5EF" {% if student.grade == "5EF" %} selected="selected" {% endif %}>
+                5º Ano do Ensino Fundamental
+            </option>
+            <option value="6EF" {% if student.grade == "6EF" %} selected="selected" {% endif %}>
+                6º Ano do Ensino Fundamental
+            </option>
+            <option value="7EF" {% if student.grade == "7EF" %} selected="selected" {% endif %}>
+                7º Ano do Ensino Fundamental
+            </option>
+            <option value="8EF" {% if student.grade == "8EF" %} selected="selected" {% endif %}>
+                8º Ano do Ensino Fundamental
+            </option>
+            <option value="9EF" {% if student.grade == "9EF" %} selected="selected" {% endif %}>
+                9º Ano do Ensino Fundamental
+            </option>
+            <option value="1EM" {% if student.grade == "1EM" %} selected="selected" {% endif %}>
+                1º Ano do Ensino Médio
+            </option>
+            <option value="2EM" {% if student.grade == "2EM" %} selected="selected" {% endif %}>
+                2º Ano do Ensino Médio
+            </option>
+            <option value="3EM" {% if student.grade == "3EM" %} selected="selected" {% endif %}>
+                3º Ano do Ensino Médio
+            </option>
+        </select>
+    </div>
+
+    <div class="item">
+        <p>Carga Horária Semanal</p>
+        <input type="number" placeholder="Apenas números" name="workload" value="{{student.workload}}">
+    </div>

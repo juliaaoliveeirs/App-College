@@ -197,12 +197,12 @@ button[type="submit"] {
     margin-top: 24px;
 }
 
-button[type="button"]{
+button[type="button"] {
     width: 100%;
     background-color: var(--secondary-color)
 }
 
-.form-delete button[type="submit"]{
+.form-delete button[type="submit"] {
     background-color: firebrick;
 }
 
@@ -227,16 +227,18 @@ select {
     font-weight: bold;
 }
 
+
 /*=== INDEX ===*/
-.table-container{
+
+.table-container {
     display: block;
-    text-align: center;
     padding: 16px;
     box-sizing: border-box;
 }
 
 .table-container table {
     border-spacing: 0;
+    text-align: center;
 }
 
 .table-container thead tr th {
@@ -245,22 +247,23 @@ select {
     color: #0D0D0D;
 }
 
-th, td {
+th,
+td {
     padding: 16px;
     border-bottom: 1px solid #8b8b8b;
 }
 
-tbody tr:last-child td{
+tbody tr:last-child td {
     border: none;
 }
 
-tbody tr td:first-child{
+tbody tr td:first-child {
     display: grid;
     grid-template-columns: 64px 1fr;
     align-items: center;
 }
 
-tbody tr td:first-child span{
+tbody tr td:first-child span {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -270,7 +273,7 @@ tbody tr td:first-child span{
     box-shadow: 3px 3px 6px -1px black;
 }
 
-tbody tr td:nth-child(2) span{
+tbody tr td:nth-child(2) span {
     padding: 8px 16px;
     background-color: var(--secondary-color);
     border-radius: 16px;
@@ -282,4 +285,23 @@ tbody tr td:nth-child(2) span{
     text-transform: uppercase;
     font-size: 12px;
     letter-spacing: 1px;
+}
+
+tbody tr td a,
+.table-container>a {
+    background-color: var(--primary-color);
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: var(--secondary-color);
+}
+
+.table-container>a {
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+tbody tr td a:hover,
+.table-container>a:hover {
+    box-shadow: 4px 4px 8px 1px rgba(0, 0, 0, 0.4);
 }
