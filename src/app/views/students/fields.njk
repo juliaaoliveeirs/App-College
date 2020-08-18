@@ -53,3 +53,14 @@
         <p>Carga Horária Semanal</p>
         <input type="number" placeholder="Apenas números" name="workload" value="{{student.workload}}">
     </div>
+
+    <div class="item">
+        <p>Professora</p>
+        <select name="teacher">
+            {% for teacher in teacherOptions %}
+            <option value="{{teacher.id}}" {% if student.teacher_id == teacher.id %} selected="selected" {% endif %}>
+                {{teacher.name}}
+            </option>
+            {% endfor %}
+        </select>
+    </div>

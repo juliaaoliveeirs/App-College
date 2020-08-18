@@ -212,7 +212,8 @@ button[type="button"] {
 }
 
 button[type="button"]:hover,
-button[type="submit"]:hover {
+button[type="submit"]:hover,
+.table-container .header a:hover {
     box-shadow: 4px 4px 8px 1px rgba(0, 0, 0, 0.4);
 }
 
@@ -274,7 +275,9 @@ tbody tr td:first-child span {
 }
 
 tbody tr td a,
-.table-container>a {
+.table-container>a,
+.table-container .header a,
+.table-container .header form button {
     background-color: var(--primary-color);
     text-decoration: none;
     padding: 8px 12px;
@@ -290,4 +293,37 @@ tbody tr td a,
 tbody tr td a:hover,
 .table-container>a:hover {
     box-shadow: 4px 4px 8px 1px rgba(0, 0, 0, 0.4);
+}
+
+
+/*===FILTER===*/
+
+.table-container .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.table-container .header form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+    grid-gap: 8px;
+}
+
+.table-container .header a {
+    width: 110px;
+    text-align: center;
+    margin: 0;
+}
+
+.table-container .header form input {
+    border: 1px solid var(--primary-color);
+    padding: 4px 8px;
+    box-sizing: border-box;
+}
+
+.table-container .header form button {
+    margin: 0;
 }

@@ -1,32 +1,31 @@
-const Intl = require('intl')
-const { age, graduation, date, grade } = require('../../lib/utils')
-const Student = require('../models/student')
-const db = require('../../config/db')
+const { date, grade } = require('../../lib/utils')
+const Student = require('../models/Student')
 
 module.exports = {
     index(req, res) {
         Student.all(function(students) {
-
             let studentsList = []
-
-            // for percorre cada estudante para então entrar na função da grade
-            // para exibição na tela index
-            for (let i = 1; i < students.length + 1; i++) {
-                const foundStudent = students.find(function(student) {
-                    return student.id == i
+                // for percorre cada estudante para então entrar na função da grade
+                // para exibição na tela index
+            for (let i = 0; i < students.length + 1; i++) {
+                const foundStudent = students.find(function(student, index) {
+                    return index == i
                 })
-
-                studentsList.push({
-                    ...foundStudent,
-                    grade: grade(foundStudent.grade)
-                })
+                if (foundStudent) {
+                    studentsList.push({
+                        ...foundStudent,
+                        grade: grade(foundStudent.grade)
+                    })
+                }
             }
 
             return res.render('students/index', { students: studentsList })
         })
     },
     create(req, res) {
-        return res.render('students/create')
+        Student.teacherSelectOptions(function(options) {
+            return res.render('students/create', { teacherOptions: options })
+        })
     },
     post(req, res) {
         const keys = Object.keys(req.body)
@@ -56,7 +55,9 @@ module.exports = {
 
             student.birth = date(student.birth).iso
 
-            return res.render('students/edit', { student })
+            Student.teacherSelectOptions(function(options) {
+                return res.render('students/edit', { student, teacherOptions: options })
+            })
         })
     },
     update(req, res) {
