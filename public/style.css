@@ -202,13 +202,13 @@ button[type="button"] {
     background-color: var(--secondary-color)
 }
 
-.form-delete button[type="submit"] {
-    background-color: firebrick;
-}
-
 .divButtons {
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+.divButtons button[type="submit"]:nth-child(2) {
+    background-color: firebrick;
 }
 
 button[type="button"]:hover,
@@ -271,20 +271,6 @@ tbody tr td:first-child span {
     background-size: cover;
     border: 2px solid var(--primary-color);
     box-shadow: 3px 3px 6px -1px black;
-}
-
-tbody tr td:nth-child(2) span {
-    padding: 8px 16px;
-    background-color: var(--secondary-color);
-    border-radius: 16px;
-    color: var(--primary-color);
-    margin-right: 4px;
-    margin-top: 8px;
-    display: inline-block;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 1px;
 }
 
 tbody tr td a,

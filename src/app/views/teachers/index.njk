@@ -3,7 +3,7 @@
 
 {% block content %}
     <div class="card table-container">
-        <a href="/students/create">Novo</a>
+        <a href="/teachers/create">Novo</a>
         <table width="100%">
             <thead>
                 <tr>
@@ -20,9 +20,7 @@
                             {{ teacher.name }}
                         </td>
                         <td>
-                            {% for occupation in teacher.occupation_area %}
-                                <span>{{occupation}}</span>
-                            {% endfor %}
+                            <span>{{teacher.subjects_taught}}</span>
                         </td>
                         <td>
                             <a href="/teachers/{{ teacher.id }}">Ver</a>

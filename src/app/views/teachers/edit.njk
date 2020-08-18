@@ -5,18 +5,20 @@
     <div class="card">
         <section class="image" style="background:url({{teacher.avatar_url}}) no-repeat center center / cover"></section>
         <section class="details">
-            <form method="POST" action="/teachers?_method=PUT">
+            <form id="form-edit" method="POST" action="/teachers?_method=PUT">
                 <h2>Editando Professor(a)</h2>
 
                 {% include 'teachers/fields.njk'%}
                 <input type="hidden" name="id" value="{{teacher.id}}">
-                <div class="divButtons">
-                    <button type="submit">Salvar</button>
-                </form>
-                <form class="form-delete" action="/teachers?_method=DELETE" method="post">
-                    <input type="hidden" name="id" value="{{teacher.id}}">
-                    <button type="submit">Deletar</button>
-                </form>
+
+            </form>
+            <form class="form-delete" id="form-delete" action="/teachers?_method=DELETE" method="post">
+                <input type="hidden" name="id" value="{{teacher.id}}">
+            </form>
+
+            <div class="divButtons">
+                <button type="submit" form="form-edit">Salvar</button>
+                <button type="submit" form="form-delete">Deletar</button>
             </div>
         </section>
     </div>

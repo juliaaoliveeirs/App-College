@@ -27,14 +27,14 @@
 
                 <div class="item">
                     <p>Tipo de aula</p>
-                    <p>{{ "Presencial" if teacher.type_of_class == "Presential" else "À Distância" }}</p>
+                    <p>{{ "Presencial" if teacher.class_type == "Presential" else "À Distância" }}</p>
                 </div>
 
                 <div class="item">
                     <p>Acompanhamento</p>
                     <p>
-                        {% for occupation in teacher.occupation_area %}
-                            <span>{{occupation}}</span>
+                        {% for subject_taught in teacher.subjects_taught %}
+                            <span>{{subject_taught}}</span>
                         {% endfor %}
                     </p>
                 </div>

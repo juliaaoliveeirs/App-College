@@ -20,16 +20,16 @@ module.exports = {
 
         let graduation = ""
         switch (selected) {
-            case "Complete High School":
+            case "HS":
                 graduation = "Ensino Médio Completo"
                 break
-            case "Complete Higher Education":
+            case "HE":
                 graduation = "Ensino Superior Completo"
                 break
-            case "Masters degree":
+            case "M":
                 graduation = "Mestrado"
                 break
-            case "Doctorate degree":
+            case "D":
                 graduation = "Doutorado"
                 break
         }
@@ -50,7 +50,8 @@ module.exports = {
             month,
             year,
             iso: `${year}-${month}-${day}`,
-            birthDay: `${day}/${month}`
+            birthDay: `${day}/${month}`,
+            format: `${day}/${month}/${year}`,
         }
     },
 
