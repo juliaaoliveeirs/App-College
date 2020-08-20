@@ -8,7 +8,9 @@ ___
 <h3 align="center">
   <a href="#information_source-sobre">Sobre</a>&nbsp;|&nbsp;
   <a href="#interrobang-motivo">Motivo</a>&nbsp;|&nbsp;
-  <a href="#seedling-requisitos-mínimos">Requisitos</a>&nbsp;|&nbsp;
+  <a href="#seedling-instalação">Instalação</a>&nbsp;|&nbsp;
+  <a href="#ab-criação-do-banco-de-dados">Banco de Dados</a>&nbsp;|&nbsp;
+  <a href="#heavy_check_mark-executando-o-sistema">Executando</a>&nbsp;|&nbsp;
   <a href="#rocket-tecnologias-utilizadas">Tecnologias</a>&nbsp;
 </h3>
 
