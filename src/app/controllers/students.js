@@ -3,24 +3,27 @@ const Student = require('../models/Student')
 
 module.exports = {
     index(req, res) {
-        Student.all(function(students) {
-            let studentsList = []
-                // for percorre cada estudante para então entrar na função da grade
-                // para exibição na tela index
-            for (let i = 0; i < students.length + 1; i++) {
-                const foundStudent = students.find(function(student, index) {
-                    return index == i
-                })
-                if (foundStudent) {
-                    studentsList.push({
-                        ...foundStudent,
-                        grade: grade(foundStudent.grade)
-                    })
-                }
-            }
+        let { filter, page, limit } = req.query
 
-            return res.render('students/index', { students: studentsList })
-        })
+        page = page || 1
+        limit = limit || 2
+        let offset = limit * (page - 1)
+
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(students) {
+                const pagination = {
+                    total: Math.ceil(students[0].total / limit),
+                    page
+                }
+                return res.render('students/index', { students, filter, pagination })
+            }
+        }
+
+        Student.paginate(params)
     },
     create(req, res) {
         Student.teacherSelectOptions(function(options) {

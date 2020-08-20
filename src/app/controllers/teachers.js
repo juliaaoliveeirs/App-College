@@ -4,17 +4,28 @@ const Teacher = require('../models/teacher')
 
 module.exports = {
     index(req, res) {
-        const { filter } = req.query
+        let { filter, page, limit } = req.query
 
-        if (filter) {
-            Teacher.findBy(filter, function(teachers) {
-                return res.render('teachers/index', { teachers, filter })
-            })
-        } else {
-            Teacher.all(function(teachers) {
-                return res.render('teachers/index', { teachers })
-            })
+        // page é igual a page ou se não tiver nada é 1
+        page = page || 1
+        limit = limit || 2
+        let offset = limit * (page - 1)
+
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(teachers) {
+                const pagination = {
+                    total: Math.ceil(teachers[0].total / limit),
+                    page
+                }
+                return res.render('teachers/index', { teachers, filter, pagination })
+            }
         }
+
+        Teacher.paginate(params)
     },
     create(req, res) {
         return res.render('teachers/create')
